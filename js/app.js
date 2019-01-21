@@ -1,5 +1,9 @@
 const listaTweets = document.getElementById('lista-tweets');
 
+/**
+ * Selector actualizado
+ */
+const deleteTweetButtons = document.getElementsByClassName('borrar-tweet')
 
 //Event Listeners
 
@@ -9,8 +13,6 @@ function eventListeners(){
 
     document.querySelector('#formulario').addEventListener('submit', agregarTweet);
 
-  // Borrar tweets
-  listaTweets.addEventListener('click', borrarTweet);
 
   //Contenido cargado
 
@@ -49,6 +51,10 @@ agregarTweetLocalStorage(tweet)
 function borrarTweet(e){
 e.preventDefault();
 if(e.target.className == 'borrar-tweet'){
+    /**
+     *  Esta es la forma para seleccionar al <li> que quieres borrar
+     *     deleteTweetButtons[0].parentNode
+     */
     borrarTweetLocalStorage(e.target.parentElement.innerText);
    } 
 }
